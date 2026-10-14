@@ -2,7 +2,8 @@
 using namespace std;
 
 int main()
-{
+{  
+    cout<<"This code is created to check version control in GIT";
     int n;
 
     cout << "Enter the size of the shapes: ";
