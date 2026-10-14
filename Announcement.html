@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz Announcement</title>
+<style>
+  :root {
+    --bg1: #6D28D9;
+    --bg2: #DB2777;
+    --bg3: #F59E0B;
+    --card-bg: rgba(255,255,255,0.14);
+    --card-border: rgba(255,255,255,0.35);
+    --text-main: #FFFFFF;
+    --text-sub: rgba(255,255,255,0.85);
+    --pill-bg: rgba(255,255,255,0.92);
+    --pill-text: #4C1D95;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg1: #4C1D95;
+      --bg2: #9D174D;
+      --bg3: #92400E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg1: #4C1D95;
+    --bg2: #9D174D;
+    --bg3: #92400E;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: env(safe-area-inset-top,0px) 24px env(safe-area-inset-bottom,0px) 24px;
+    overflow-x: hidden;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .card {
+    max-width: 640px;
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 28px;
+    padding: clamp(32px, 6vw, 56px);
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+
+  .icon {
+    font-size: clamp(48px, 9vw, 72px);
+    margin-bottom: 12px;
+    display: inline-block;
+    animation: bounce 2.4s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .pill {
+    display: inline-block;
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    font-weight: 700;
+    font-size: clamp(12px, 2.4vw, 14px);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    color: var(--text-main);
+    font-size: clamp(28px, 6vw, 44px);
+    line-height: 1.15;
+    margin: 0 0 16px 0;
+    font-weight: 800;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  }
+
+  p.sub {
+    color: var(--text-sub);
+    font-size: clamp(15px, 2.6vw, 18px);
+    line-height: 1.6;
+    margin: 0 0 28px 0;
+  }
+
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .detail {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 14px;
+    padding: 14px 20px;
+    color: var(--text-main);
+    min-width: 130px;
+    flex: 1 1 140px;
+  }
+
+  .detail .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.75;
+    margin-bottom: 6px;
+  }
+
+  .detail .value {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .footer-note {
+    margin-top: 28px;
+    color: var(--text-sub);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">📢</div>
+    <div class="pill">Announcement</div>
+    <h1>Heads up — Quiz Next Week!</h1>
+    <p class="sub">Make sure to review your notes and practice the concepts we've covered in class. Come prepared and bring your questions!</p>
+    <div class="details">
+      <div class="detail">
+        <div class="label">When</div>
+        <div class="value">Next Week</div>
+      </div>
+      <div class="detail">
+        <div class="label">Format</div>
+        <div class="value">MCQs + Short Q's</div>
+      </div>
+      <div class="detail">
+        <div class="label">Bring</div>
+        <div class="value">Pen &amp; ID Card</div>
+      </div>
+    </div>
+    <p class="footer-note">Questions? Reach out to your instructor before class.</p>
+  </div>
+</body>
+</html>
